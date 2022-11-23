@@ -16,7 +16,7 @@
       "prettier --write",
       "jest --bail --findRelatedTests"
     ],
-    "*.json": [
+    "*.{json,md}": [
       "prettier --write"
     ]
   },
