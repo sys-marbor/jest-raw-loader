@@ -1,24 +1,27 @@
 {
-  "name": "jest-raw-loader",
-  "version": "1.0.1",
+  "name": "@glen/jest-raw-loader",
   "description": "Jest transformer mimicking webpack-contrib/raw-loader's functionality",
   "main": "index.js",
-  "repository": "https://github.com/keplersj/jest-raw-loader",
+  "repository": "https://github.com/glensc/jest-raw-loader",
   "author": "Kepler Sticka-Jones <kepler@stickajones.org>",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "test": "jest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prepare-release": "npm install && npm version --new-version $APP_VERSION --no-git-tag-version",
+    "test": "jest"
   },
   "lint-staged": {
     "*.js": [
       "prettier --write",
       "jest --bail --findRelatedTests"
     ],
-    "*.json": [
+    "*.{json,md}": [
       "prettier --write"
     ]
+  },
+  "peerDependencies": {
+    "jest": ">=28"
   },
   "devDependencies": {
     "eslint": "8.28.0",
